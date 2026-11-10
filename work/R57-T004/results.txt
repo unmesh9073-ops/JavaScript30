@@ -1,0 +1,12 @@
+# Baseline Behavior
+- The script executed globally upon page load.
+- No idempotent checks existed. If the initialization logic ran multiple times, identical `click` event listeners would stack on the checkbox DOM nodes, duplicating execution logic and wasting memory.
+
+# Changed Behavior
+- Abstracted the event binding logic into `window.initCheckboxes()`.
+- Implemented a `dataset.initialized` check on the `.inbox` container.
+- If initialized again, the function safely aborts, ensuring exact intended update and preventing memory leaks or duplicate handlers.
+
+# Tool Versions
+- Node: v20.x
+- Playwright: 1.x
