@@ -1,0 +1,10 @@
+# Baseline Behavior
+- The HTML5 canvas drawing app lacked an isolated text-rendering control or explicit fixture for specialized text containing unicode/emojis.
+
+# Changed Behavior
+- Added a companion text-rendering input fixture containing the target test string with emoji 🖼️.
+- Implemented a Playwright check ensuring the string renders safely as plain text without script injection.
+
+# Tool Versions
+- Node: v26.x
+- Playwright: 1.x
