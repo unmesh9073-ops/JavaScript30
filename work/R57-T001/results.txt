@@ -1,0 +1,13 @@
+# Baseline Behavior
+- The `.mole` div elements are inaccessible via the 'Tab' key.
+- The `bonk` function exclusively listens for 'click' events.
+- No visual indicator exists when a mole is targeted.
+
+# Changed Behavior
+- Introduced `tabindex="0"` to `.mole` elements (no positive tabindex used).
+- Implemented `keydown` event listener triggering on 'Enter' and ' '.
+- Applied a 4px dashed outline in CSS for visible focus on `.mole:focus`.
+
+# Tool Versions
+- Node: v20.x
+- Playwright: 1.x
