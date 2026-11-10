@@ -1,0 +1,14 @@
+# Baseline Behavior
+- The `setDate` function assumed `new Date()` would always return a valid timestamp.
+- If the browser generated an invalid date or an error was thrown, the JavaScript execution silently failed.
+- The clock hands remained frozen with no visual indication to the user that an error had occurred.
+
+# Changed Behavior
+- Wrapped the time synchronization logic in a `try...catch` block.
+- Added strict `isNaN(now.getTime())` validation to catch invalid system times.
+- Implemented a `.error` CSS class that turns the clock face red and displays "Time Error" when the catch block is triggered.
+- Ensured the `clock.classList.remove('error')` method executes upon successful time retrieval, allowing the UI to recover from temporary failures.
+
+# Tool Versions
+- Node: v20.x
+- Playwright: 1.x
