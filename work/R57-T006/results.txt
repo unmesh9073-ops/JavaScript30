@@ -1,0 +1,11 @@
+# Baseline Behavior
+- The gallery relied entirely on modern CSS Flexbox and transitions with no explicit check for legacy browsers.
+- If rendered in an unsupported environment, layouts could collapse silently without notifying the user.
+
+# Changed Behavior
+- Implemented a CSS `@supports (display: flex)` query check alongside a `.browser-fallback` notice banner.
+- Verified both feature-present and feature-absent states via Playwright assertions to ensure graceful degradation.
+
+# Tool Versions
+- Node: v26.x
+- Playwright: 1.x

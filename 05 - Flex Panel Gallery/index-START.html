@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Flex Panels 💪</title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
+
 <body>
+  <div class="browser-fallback">Your browser does not support modern Flexbox features. Some layout elements may be
+    degraded.</div>
   <style>
     html {
       box-sizing: border-box;
@@ -20,7 +24,9 @@
       margin: 0;
     }
 
-    *, *:before, *:after {
+    *,
+    *:before,
+    *:after {
       box-sizing: inherit;
     }
 
@@ -31,29 +37,43 @@
 
     .panel {
       background: #6B0F9C;
-      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+      box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
       color: white;
       text-align: center;
       align-items: center;
       /* Safari transitionend event.propertyName === flex */
       /* Chrome + FF transitionend event.propertyName === flex-grow */
       transition:
-        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
         background 0.2s;
       font-size: 20px;
       background-size: cover;
       background-position: center;
     }
 
-    .panel1 { background-image: url(https://images.unsplash.com/photo-1443891238287-325a8fddd0f7?w=1500&h=1500); }
-    .panel2 { background-image: url(https://cdn.pixabay.com/photo/2017/08/07/16/48/green-2605621_1280.jpg); }
-    .panel3 { background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?w=1500&h=1500); }
-    .panel4 { background-image: url(https://images.unsplash.com/photo-1442522772768-9032b6d10e3e?w=1500&h=1500); }
-    .panel5 { background-image: url(https://images.unsplash.com/photo-1465156799763-2c087c332922?w=1500&h=1500); }
+    .panel1 {
+      background-image: url(https://images.unsplash.com/photo-1443891238287-325a8fddd0f7?w=1500&h=1500);
+    }
+
+    .panel2 {
+      background-image: url(https://cdn.pixabay.com/photo/2017/08/07/16/48/green-2605621_1280.jpg);
+    }
+
+    .panel3 {
+      background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?w=1500&h=1500);
+    }
+
+    .panel4 {
+      background-image: url(https://images.unsplash.com/photo-1442522772768-9032b6d10e3e?w=1500&h=1500);
+    }
+
+    .panel5 {
+      background-image: url(https://images.unsplash.com/photo-1465156799763-2c087c332922?w=1500&h=1500);
+    }
 
     /* Flex Children */
-    .panel > * {
+    .panel>* {
       margin: 0;
       width: 100%;
       transition: transform 0.5s;
@@ -74,6 +94,26 @@
       font-size: 40px;
     }
 
+    /* Fallback notification for unsupported browsers */
+    .browser-fallback {
+      display: none;
+      background: #ffdddd;
+      color: #900;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    @supports not (display: flex) {
+      .browser-fallback {
+        display: block;
+      }
+
+      .panels {
+        display: block;
+        /* Fallback from flexbox */
+      }
+    }
   </style>
 
 
@@ -112,4 +152,5 @@
 
 
 </body>
+
 </html>
