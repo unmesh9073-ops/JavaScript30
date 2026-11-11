@@ -1,0 +1,12 @@
+# Baseline Behavior
+- The Speech Synthesis page relied on default browser outlines, which could be indistinct or overridden by active state styles.
+- Animations and transitions executed unconditionally, ignoring OS-level user motion preferences.
+
+# Changed Behavior
+- Implemented a clear, high-contrast `:focus` CSS rule for keyboard navigability.
+- Added a `@media (prefers-reduced-motion: reduce)` query to globally disable animations for sensitive users.
+- Automated testing verifies that the emulated reduced-motion context successfully zeroes out CSS transition durations.
+
+# Tool Versions
+- Node: v26.x
+- Playwright: 1.x
