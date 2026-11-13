@@ -1,0 +1,11 @@
+# Baseline Behavior
+- The Countdown Timer application provided preset buttons and a custom minute form (`#custom`) for timer intervals.
+- Without automated checks, verifying timer state transitions and interval clearances across UI actions was manual.
+
+# Changed Behavior
+- Created a robust Playwright test script validating preset button interaction and custom minute form input submission.
+- Asserted that timer text updates dynamically on the DOM.
+
+# Tool Versions
+- Node: v26.x
+- Playwright: 1.x
