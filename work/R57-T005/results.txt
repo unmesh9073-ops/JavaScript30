@@ -1,0 +1,9 @@
+# Baseline Behavior
+- [Describe the original bug, missing feature, or unoptimized state of the page/script before your edits]
+
+# Changed Behavior
+- [Describe the specific code modifications, error handling, CSS constraints, or test setup you implemented]
+
+# Tool Versions
+- Node: v26.x (or your current version)
+- Playwright: 1.x

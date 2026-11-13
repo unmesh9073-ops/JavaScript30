@@ -1,0 +1,13 @@
+# Baseline Behavior
+- The page lacked a viewport meta tag, causing incorrect scaling on mobile devices.
+- No responsive padding or typography constraints existed.
+- Potential horizontal overflow on narrow widths (360px) due to lack of `word-wrap` and `max-width` on content blocks.
+
+# Changed Behavior
+- Added `<meta name="viewport" content="width=device-width, initial-scale=1.0">`.
+- Implemented responsive CSS: base padding of `2rem` adjusting to `1rem` below `768px`.
+- Enforced `max-width: 100%` and `word-wrap: break-word` on the `<p>` tag to explicitly prevent horizontal scrolling.
+
+# Tool Versions
+- Node: v20.x
+- Playwright: 1.x

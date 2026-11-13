@@ -8,10 +8,3 @@
 # Tool Versions
 - Node: v26.x
 - Playwright: 1.x
-```[cite: 29, 30]
-
-### 4. Commit Your Work
-Stage and commit your final task locally:
-```bash
-git add tests/course/r57-t010.mjs work/R57-T010/results.txt
-git commit -m "Test: Add plausible UI regression trap for Speech Detection (R57-T010)"
